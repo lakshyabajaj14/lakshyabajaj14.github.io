@@ -13,7 +13,7 @@
     <meta property="og:title" content="Portfolio | Lakshya Bajaj">
     <meta property="og:description"
         content="Personal Portfolio of Lakshya Bajaj - Robotics & Embedded Systems Engineer">
-    <meta property="og:image" content="https://lakshyabajaj14.github.io/assets/preview.jpg">
+    <meta property="og:image" content="https://lakshyabajaj14.github.io/assets/hero_image/preview.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="465">
     <meta property="og:image:height" content="600">
@@ -24,14 +24,13 @@
     <meta property="twitter:title" content="Portfolio | Lakshya Bajaj">
     <meta property="twitter:description"
         content="Personal Portfolio of Lakshya Bajaj - Robotics & Embedded Systems Engineer">
-    <meta property="twitter:image" content="https://lakshyabajaj14.github.io/assets/preview.jpg">
+    <meta property="twitter:image" content="https://lakshyabajaj14.github.io/assets/hero_image/preview.jpg">
 
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <!-- Placeholder for FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -71,24 +70,24 @@
                     <h1 class="hero-name">Lakshya Bajaj</h1>
                     <h2 class="hero-role">Robotics & Embedded Systems Engineer</h2>
                     <p class="hero-description">
-                        Designing Scalable Hardware–Software Architectures for Intelligent Systems.
+                        Building Hardware-Software Systems for Robots That Sense, Learn, and Act.
                     </p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">View Work</a>
                         <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                        <a href="./LakshyaBajaj_ResumeS26.pdf" class="btn btn-secondary" target="_blank">Resume <i
-                                class="fas fa-external-link-alt" style="margin-left:8px;"></i></a>
+                        <a href="./LakshyaBajaj_Resume.pdf" class="btn btn-secondary" id="hero-resume-btn" target="_blank" download="LakshyaBajaj_Resume.pdf">
+                            <i class="fas fa-file-arrow-down"></i> Download Resume
+                        </a>
                     </div>
                     <div class="hero-socials">
-                        <a href="https://github.com/lakshyabajaj" target="_blank" aria-label="GitHub"><i
+                        <a href="https://github.com/lakshyabajaj14" target="_blank" aria-label="GitHub"><i
                                 class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/lakshyabajaj" target="_blank" aria-label="LinkedIn"><i
                                 class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="./assets/IMG_2640.jpeg" alt="Lakshya Bajaj Profile Picture"
-                        style="width: 320px; height: 320px; object-fit: cover; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: var(--shadow-soft);">
+                    <img src="./assets/hero_image/IMG_2640.jpeg" alt="Lakshya Bajaj Profile Picture">
                 </div>
             </div>
         </section>
@@ -99,22 +98,13 @@
                 <div class="about-content">
                     <div class="about-text">
                         <p>
-                            I am a robotics engineering student at Purdue University focused on designing the electrical
-                            and control architectures that enable intelligent machines to operate reliably and
-                            efficiently. My work centers on embedded systems, motor control, sensor fusion, and
-                            real-time integration, building the foundational infrastructure that connects hardware to
-                            autonomy.
+                            I'm a robotics engineering student at Purdue focused on the hardware and control layers that let robots sense and act in the physical world, from custom PCB-based tactile sensor arrays to embedded control systems and motor-level integration.
                         </p>
-                        <br>
                         <p>
-                            I am motivated by systems-level engineering challenges where performance, scalability, and
-                            precision matter. Rather than building isolated features, I aim to develop cohesive
-                            hardware–software platforms that can support increasingly complex capabilities over time.
+                            I like getting close to the hardware: building the sensing and signal pipelines that feed into higher-level autonomy, and increasingly, the imitation-learning and ROS2 systems that turn that sensor data into robot behavior.
                         </p>
-                        <br>
                         <p>
-                            My long-term goal is to contribute to next-generation hardware and robotic systems that
-                            define how intelligent technology interacts with the physical world.
+                            My long-term goal is to work on robots that can perceive and manipulate the physical world reliably, combining tactile sensing, embedded systems, and learning-based control.
                         </p>
                     </div>
                 </div>
@@ -136,7 +126,6 @@
                             <div class="skill-item">Signal Conditioning</div>
                             <div class="skill-item">Power Systems</div>
                             <div class="skill-item">Motor Control</div>
-
                         </div>
                     </div>
 
@@ -146,8 +135,12 @@
                         <div class="skill-chips">
                             <div class="skill-item">Control Systems</div>
                             <div class="skill-item">Kinematics</div>
-                            <div class="skill-item">Industrial Robot Programming (FANUC KAREL)</div>
-                            <div class="skill-item">ROS (Foundational Exposure)</div>
+                            <div class="skill-item">FANUC KAREL</div>
+                            <div class="skill-item">Yamaha Robot Programming</div>
+                            <div class="skill-item">PLCs</div>
+                            <div class="skill-item">ROS 2</div>
+                            <div class="skill-item">Teleoperation</div>
+                            <div class="skill-item">Imitation Learning (ACT)</div>
                         </div>
                     </div>
 
@@ -157,7 +150,7 @@
                         <div class="skill-chips">
                             <div class="skill-item">Python</div>
                             <div class="skill-item">C</div>
-                            <div class="skill-item">C++</div>
+                            <div class="skill-item">OpenCV</div>
                             <div class="skill-item">MATLAB</div>
                         </div>
                     </div>
@@ -166,9 +159,22 @@
                     <div class="skill-category">
                         <h3 class="skill-category-title">Mechanical & Prototyping</h3>
                         <div class="skill-chips">
+                            <div class="skill-item">Onshape</div>
                             <div class="skill-item">Siemens NX & Teamcenter</div>
                             <div class="skill-item">Fusion 360</div>
                             <div class="skill-item">3D Printing</div>
+                            <div class="skill-item">Laser Cutting</div>
+                        </div>
+                    </div>
+
+                    <!-- Manufacturing & Process -->
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Manufacturing & Process</h3>
+                        <div class="skill-chips">
+                            <div class="skill-item">Lean Manufacturing (Kaizen, 5S)</div>
+                            <div class="skill-item">Value Stream Mapping</div>
+                            <div class="skill-item">Cycle Time Analysis</div>
+                            <div class="skill-item">Cost-Benefit Analysis</div>
                         </div>
                     </div>
                 </div>
@@ -179,109 +185,183 @@
             <div class="container">
                 <h2 class="section-title">Projects</h2>
                 <div class="projects-grid">
-                    <!-- Project Card 1 -->
-                    <article class="project-card">
+                    
+                    <!-- Project Card 1: SO-101 Policy Watchdog -->
+                    <article class="project-card" data-project-id="so101-watchdog" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View SO-101 Policy Watchdog project details">
                         <div class="project-img">
-                            <img src="./assets/projects/metal%20sorter/metal_sorter_robot.jpeg"
-                                alt="Automated Metal Sorter Project"
-                                style="width:100%; height:100%; object-fit:cover; border-radius:inherit; display:block;">
+                            <img src="./assets/projects/so101%20policy%20watchdog/so101_watchdog_setup.png" alt="SO-101 Policy Watchdog" loading="lazy">
+                            <div class="project-img-overlay"></div>
+                            <span class="project-badge">Robotics & Autonomy</span>
                         </div>
                         <div class="project-info">
+                            <div class="project-tags">
+                                <span class="project-tag">ROS2</span>
+                                <span class="project-tag">ACT Policy</span>
+                                <span class="project-tag">OpenCV</span>
+                                <span class="project-tag">DS4 Teleop</span>
+                            </div>
+                            <h3 class="project-title">SO-101 Policy Watchdog</h3>
+                            <p class="project-desc">A vision-based failure detection and recovery system for robot arm policies, demonstrated on a SO-101 arm. Combines an ACT imitation learning policy with real-time OpenCV failure detection and DS4 teleoperation handover.</p>
+                            <div class="project-card-footer">
+                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 2: DS4 Teleop for LeRobot -->
+                    <article class="project-card" data-project-id="lerobot-ds4" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View DS4 Teleop for LeRobot project details">
+                        <div class="project-img">
+                            <img src="./assets/projects/act%2Bds4/ds4_lerobot_workspace.png" alt="DS4 Teleop for LeRobot" loading="lazy">
+                            <div class="project-img-overlay"></div>
+                            <span class="project-badge">Open Source</span>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">LeRobot</span>
+                                <span class="project-tag">DualShock 4</span>
+                                <span class="project-tag">Teleoperation</span>
+                            </div>
+                            <h3 class="project-title">DS4 Teleop for LeRobot (Open Source PR)</h3>
+                            <p class="project-desc">Contributed a new teleoperator module to the open-source LeRobot library by Hugging Face, enabling DualShock 4 controller teleoperation for robot arms as a low-cost alternative to leader arms.</p>
+                            <div class="project-card-footer">
+                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 3: MEEES Lunar Base Tool-Handling -->
+                    <article class="project-card" data-project-id="meees-lunar" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View MEEES Lunar Base Tool-Handling System project details">
+                        <div class="project-img">
+                            <img src="./assets/projects/MEEES/meees_gripper_cad.png" alt="MEEES Lunar Base Tool-Handling System" loading="lazy">
+                            <div class="project-img-overlay"></div>
+                            <span class="project-badge">CAD & Mechanism</span>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="project-tag">CAD (Onshape)</span>
+                                <span class="project-tag">SO-101 Arm</span>
+                                <span class="project-tag">Mechanism Design</span>
+                                <span class="project-tag">JSON Playback</span>
+                            </div>
+                            <h3 class="project-title">MEEES: Lunar Base Tool-Handling System</h3>
+                            <p class="project-desc">Modified a SO-101 robot arm with a custom bayonet twist-lock gripper and interchangeable tooling system designed for lunar base assembly and logistics.</p>
+                            <div class="project-card-footer">
+                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 4: Yamaha Coin Sorter -->
+                    <article class="project-card" data-project-id="yamaha-coin-sorter" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Yamaha Pick-and-Place Coin Sorter project details">
+                        <div class="project-img">
+                            <img src="./assets/projects/yamaha%20coin%20sorter/IMG_3547.JPG" alt="Yamaha Pick-and-Place Coin Sorter" loading="lazy">
+                            <div class="project-img-overlay"></div>
+                            <span class="project-badge">Industrial Automation</span>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="project-tag">Yamaha Robotics</span>
+                                <span class="project-tag">Automation</span>
+                                <span class="project-tag">Proximity Sensors</span>
+                                <span class="project-tag">Kinematics</span>
+                            </div>
+                            <h3 class="project-title">Yamaha Pick-and-Place Coin Sorter</h3>
+                            <p class="project-desc">Programmed a Yamaha industrial robot arm to sort metal coins between two fixture rows using an inductive proximity sensor for positional gating.</p>
+                            <div class="project-card-footer">
+                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 5: Automated Metal Sorter (FANUC) -->
+                    <article class="project-card" data-project-id="fanuc-metal-sorter" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Automated Metal Sorter project details">
+                        <div class="project-img">
+                            <img src="./assets/projects/fanuc%20metal%20sorter/metal_sorter_robot.jpeg" alt="Automated Metal Sorter Project" loading="lazy">
+                            <div class="project-img-overlay"></div>
+                            <span class="project-badge">Industrial Robotics</span>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="project-tag">FANUC KAREL</span>
+                                <span class="project-tag">Teach Pendant</span>
+                                <span class="project-tag">Sensor Integration</span>
+                            </div>
                             <h3 class="project-title">Automated Metal Sorter</h3>
-                            <p class="project-desc">Designed and programmed an automated robotic system using a FANUC
-                                industrial robot to identify and separate metal and non-metal objects. Integrated a
-                                metal sensor and indicator lights to classify and sort materials in
-                                real-time.<br><br><span style="color: var(--text-accent); font-weight: bold;">TOOLS
-                                    USED:</span> FANUC KAREL, Teach Pendant, Sensor Integration.</p>
-                            <div class="project-links">
-                                <a href="./assets/projects/metal%20sorter/fanuc_report.pdf" target="_blank"
-                                    class="link-item">Report <i class="fas fa-file-pdf"
-                                        style="margin-left:4px;"></i></a>
-                                <a href="./assets/projects/metal%20sorter/metal_sorter_code.txt" target="_blank"
-                                    class="link-item">Code
-                                    <i class="fas fa-code" style="margin-left:4px;"></i></a>
+                            <p class="project-desc">Designed and programmed an automated robotic workcell using a FANUC industrial robot to identify and classify metal and non-metal objects in real time.</p>
+                            <div class="project-card-footer">
+                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
                     </article>
-                    <article class="project-card">
+
+                    <!-- Project Card 6: Hifazat Driver Safety System -->
+                    <article class="project-card" data-project-id="hifazat-safety" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Hifazat Driver Safety System project details">
                         <div class="project-img">
-                            <img src="./assets/projects/hifazat/INTRO%20BANNER%20HIFAZAT.png" alt="Hifazat Project"
-                                style="width:100%; height:100%; object-fit:cover; border-radius:inherit; display:block;">
+                            <img src="./assets/projects/hifazat/INTRO%20BANNER%20HIFAZAT.png" alt="Hifazat Project" loading="lazy">
+                            <div class="project-img-overlay"></div>
+                            <span class="project-badge">Computer Vision & IoT</span>
                         </div>
                         <div class="project-info">
-                            <h3 class="project-title">Hifazat - Driver Safety System</h3>
-                            <p class="project-desc">Developed a comprehensive driver distraction and safety monitoring
-                                system. Leveraged Python, OpenCV, and MediaPipe to track facial features and hand
-                                gestures
-                                in real-time, detecting lethargy, phone usage, and eating. Interfaced with an
-                                Arduino-based
-                                GPS/GSM tracking module to monitor vehicle speed and automatically dispatch SMS alerts
-                                with
-                                live location data if erratic driving or severe distraction is detected.<br><br><span
-                                    style="color: var(--text-accent); font-weight: bold;">TOOLS
-                                    USED:</span> Python, OpenCV, MediaPipe, Arduino, GPS/GSM Integration, C++.</p>
-                            <div class="project-links" style="flex-wrap: wrap; gap: 1rem;">
-                                <a href="https://youtu.be/xJdPdNdqZVc" target="_blank" class="link-item">Presentation <i
-                                        class="fas fa-video" style="margin-left:4px;"></i></a>
-                                <a href="./assets/projects/hifazat/Hifazat%20media%20vid%20final.mp4" target="_blank"
-                                    class="link-item">Demo <i class="fas fa-play" style="margin-left:4px;"></i></a>
-                                <a href="https://view.officeapps.live.com/op/view.aspx?src=https://lakshyabajaj14.github.io/assets/projects/hifazat/COLLOQUIUM%20FINAL.pptx"
-                                    target="_blank" class="link-item">Slides <i class="fas fa-file-powerpoint"
-                                        style="margin-left:4px;"></i></a>
-                                <a href="https://github.com/lakshyabajaj14/Hifazat" target="_blank"
-                                    class="link-item">Code <i class="fab fa-github" style="margin-left:4px;"></i></a>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">OpenCV</span>
+                                <span class="project-tag">MediaPipe</span>
+                                <span class="project-tag">Arduino</span>
+                                <span class="project-tag">GPS/GSM</span>
+                            </div>
+                            <h3 class="project-title">Hifazat: Driver Safety System</h3>
+                            <p class="project-desc">Real-time driver distraction and fatigue monitoring system built with OpenCV and MediaPipe, paired with an Arduino GPS/GSM module for emergency SMS alerts.</p>
+                            <div class="project-card-footer">
+                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
                     </article>
-                    <article class="project-card">
+
+                    <!-- Project Card 7: Interactive Fretboard Trainer -->
+                    <article class="project-card" data-project-id="fretboard-trainer" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Interactive Fretboard Trainer project details">
                         <div class="project-img">
-                            <img src="./assets/projects/fret%20board%20trainer/fretboard_cover.png"
-                                alt="Fretboard Trainer Project"
-                                style="width:100%; height:100%; object-fit:cover; border-radius:inherit; display:block;">
+                            <img src="./assets/projects/fret%20board%20trainer/fretboard_cover.png" alt="Fretboard Trainer Project" loading="lazy">
+                            <div class="project-img-overlay"></div>
+                            <span class="project-badge">Embedded & Hardware</span>
                         </div>
                         <div class="project-info">
+                            <div class="project-tags">
+                                <span class="project-tag">Embedded Systems</span>
+                                <span class="project-tag">C++</span>
+                                <span class="project-tag">3D Printing</span>
+                                <span class="project-tag">CAD</span>
+                            </div>
                             <h3 class="project-title">Interactive Fretboard Trainer</h3>
-                            <p class="project-desc">Developed a portable, interactive stringed instrument trainer
-                                designed to keep beginner and young musicians engaged. Engineered the embedded
-                                electronics and programmed a responsive LED lighting system that visually guides users
-                                on finger placement. Collaborated on the 3D-printed physical design, resulting in a
-                                highly intuitive, personalized tool for learning an instrument.<br><br><span
-                                    style="color: var(--text-accent); font-weight: bold;">TOOLS
-                                    USED:</span> Embedded Electronics, Coding, 3D Printing, CAD, Rapid Prototyping.</p>
-                            <div class="project-links" style="flex-wrap: wrap; gap: 1rem;">
-                                <a href="./assets/projects/fret%20board%20trainer/Group01_35_P03.pdf" target="_blank"
-                                    class="link-item">Design Journal <i class="fas fa-file-pdf"
-                                        style="margin-left:4px;"></i></a>
-                                <a href="https://view.officeapps.live.com/op/view.aspx?src=https://lakshyabajaj14.github.io/assets/projects/fret%20board%20trainer/Group%201%20Final%20Presentation.pptx"
-                                    target="_blank" class="link-item">Presentation <i class="fas fa-file-powerpoint"
-                                        style="margin-left:4px;"></i></a>
-                                <a href="./assets/projects/fret%20board%20trainer/cad_design.pdf" target="_blank"
-                                    class="link-item">CAD Design <i class="fas fa-file-pdf"
-                                        style="margin-left:4px;"></i></a>
+                            <p class="project-desc">Portable stringed instrument trainer engineered with embedded electronics and dynamic LED guidance inside a custom 3D-printed enclosure.</p>
+                            <div class="project-card-footer">
+                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
                     </article>
-                    <article class="project-card">
+
+                    <!-- Project Card 8: MARS Lab TacSkin -->
+                    <article class="project-card" data-project-id="mars-tacskin" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View MARS Lab TacSkin project details">
                         <div class="project-img">
-                            <img src="./assets/projects/MARS%20Lab_TacSkin/IMG_3104.jpeg" alt="MARS Lab TacSkin Project"
-                                style="width:100%; height:100%; object-fit:cover; border-radius:inherit; display:block;">
+                            <img src="./assets/projects/MARS%20Lab_TacSkin/IMG_3104.jpeg" alt="MARS Lab TacSkin Project" loading="lazy">
+                            <div class="project-img-overlay"></div>
+                            <span class="project-badge">Research & Hardware</span>
                         </div>
                         <div class="project-info">
-                            <h3 class="project-title">Undergraduate Researcher &ndash; MARS Lab</h3>
-                            <p class="project-desc">Led hardware development for a structured data acquisition system
-                                mapping an 8&times;8 piezoresistive tactile sensor array to an Arduino Nano. Used KiCad
-                                to design custom schematics and PCB layouts. Implemented complex signal isolation,
-                                multiplexing, and circuit-level noise reduction techniques to eliminate cross-talk and
-                                maximize fidelity, preparing raw tactile data for a learning-based 3D force estimation
-                                pipeline.<br><br><span style="color: var(--text-accent); font-weight: bold;">TOOLS
-                                    USED:</span> PCB Design (KiCad), Circuit Design, Python, Signal Conditioning, 3D
-                                Force Estimation.</p>
-                            <div class="project-links" style="flex-wrap: wrap; gap: 1rem;">
-                                <a href="https://github.com/lakshyabajaj14/MARS_Lab_TacSkin" target="_blank"
-                                    class="link-item">Code <i class="fab fa-github" style="margin-left:4px;"></i></a>
+                            <div class="project-tags">
+                                <span class="project-tag">KiCad PCB</span>
+                                <span class="project-tag">16x16 Tactile Array</span>
+                                <span class="project-tag">Signal Conditioning</span>
+                                <span class="project-tag">OpenGL / PyQtGraph</span>
+                            </div>
+                            <h3 class="project-title">Undergraduate Researcher: MARS Lab</h3>
+                            <p class="project-desc">Designed custom PCB hardware and signal conditioning for a 16x16 piezoresistive tactile sensor array (256 nodes). Developed high-speed serial streaming, real-time OpenGL visualization, and 3D force modeling for learning-based robotics pipelines.</p>
+                            <div class="project-card-footer">
+                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
                     </article>
+
                 </div>
             </div>
         </section>
@@ -292,11 +372,11 @@
                 <p class="contact-text">Currently looking for new opportunities. Whether you have a question or just
                     want to say hi, I'll try my best to get back to you!</p>
                 <div class="contact-links">
-                    <a href="mailto:lakshyabajaj14@gmail.com" class="btn btn-primary">Say Hello</a>
+                    <a href="mailto:lakshyabajaj14@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Say Hello</a>
                 </div>
                 <!-- Social Icons -->
                 <div class="social-links-icons">
-                    <a href="https://github.com/lakshyabajaj" target="_blank" aria-label="GitHub"><i
+                    <a href="https://github.com/lakshyabajaj14" target="_blank" aria-label="GitHub"><i
                             class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/lakshyabajaj" target="_blank" aria-label="LinkedIn"><i
                             class="fab fa-linkedin"></i></a>
@@ -310,6 +390,40 @@
             <p>&copy; <span id="year"></span> Lakshya Bajaj. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+        <div class="modal-container">
+            <button id="project-modal-close" class="modal-close-btn" aria-label="Close details modal">&times;</button>
+            <div id="project-modal-media" class="project-modal-header-media"></div>
+            <div class="project-modal-body">
+                <h2 id="project-modal-title" class="project-modal-title"></h2>
+                <div id="project-modal-tags" class="project-modal-tags"></div>
+                <div class="project-modal-section-title">Project Overview & Architecture</div>
+                <div id="project-modal-desc" class="project-modal-description"></div>
+                <div id="project-modal-actions-title" class="project-modal-section-title">Resources & Demonstrations</div>
+                <div id="project-modal-actions" class="project-modal-actions"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Universal In-Page Media Lightbox (Images, Videos, PDFs, CAD) -->
+    <div id="media-lightbox" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+        <div class="modal-container lightbox-container">
+            <div class="lightbox-header">
+                <div id="lightbox-title" class="lightbox-title">Media Preview</div>
+                <div class="lightbox-header-actions">
+                    <a id="lightbox-external-link" href="#" target="_blank" class="lightbox-action-icon" aria-label="Open in new tab" title="Open in new tab">
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <button id="lightbox-close" class="lightbox-action-icon" aria-label="Close media viewer" title="Close viewer">
+                        <i class="fas fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="lightbox-content" class="lightbox-content-area"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
