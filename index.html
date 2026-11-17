@@ -163,9 +163,10 @@
                             <h3>Undergraduate Research Assistant</h3>
                             <p class="exp-org">Prof. Xingyu Li · Purdue University</p>
                             <ul>
-                                <li>Simulating pick-and-place manipulation with a UR5e arm in Webots for manufacturing robotics research.</li>
-                                <li>Designing a plan to fine-tune the pi0.5 vision-language-action model (OpenPi) for language-conditioned sorting and mobile fetch-and-deliver.</li>
-                                <li>Planning an imitation-learning pipeline from teleoperated demonstrations to LeRobot format, with held-out objects and lighting, texture and distractor changes to test generalization.</li>
+                                <li>Built a MuJoCo manipulation environment (UR5e + Robotiq 2F-85) where a Gemini planner grounds natural-language instructions to objects and drop zones, executed with RGB-D perception and inverse kinematics.</li>
+                                <li>Automated headless data collection with the LLM planner as the expert, generating 200+ episodes (60K frames, 2 cameras, 14 language tasks) in LeRobot format with held-out objects to test generalization.</li>
+                                <li>Fine-tuned the pi0.5 vision-language-action model (OpenPi, LoRA) on this dataset and deployed it closed-loop in simulation through a remote GPU policy server; evaluation on held-out objects is in progress.</li>
+                                <li>Developing an LLM-coordinated factory simulation (3 UR5e cells, AGV fleet) where robots request parts and a Gemini manager schedules transport, benchmarked against heuristic and planner baselines.</li>
                             </ul>
                         </div>
                     </li>
