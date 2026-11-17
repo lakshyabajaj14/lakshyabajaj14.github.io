@@ -1,431 +1,344 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Lakshya Bajaj</title>
-    <meta name="description" content="Personal Portfolio of Lakshya Bajaj - Robotics & Embedded Systems Engineer">
+    <title>Lakshya Bajaj | Robotics Engineer</title>
+    <meta name="description" content="Lakshya Bajaj builds robots end to end: the board that senses, the code that controls, and the policy that learns. Robotics Engineering Technology at Purdue.">
+    <meta name="theme-color" content="#F2EEE3">
 
     <!-- Open Graph / LinkedIn / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lakshyabajaj14.github.io/">
-    <meta property="og:title" content="Portfolio | Lakshya Bajaj">
-    <meta property="og:description"
-        content="Personal Portfolio of Lakshya Bajaj - Robotics & Embedded Systems Engineer">
+    <meta property="og:title" content="Lakshya Bajaj | Robotics Engineer">
+    <meta property="og:description" content="I build robots end to end: the board that senses, the code that controls, and the policy that learns.">
     <meta property="og:image" content="https://lakshyabajaj14.github.io/assets/hero_image/preview.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="465">
     <meta property="og:image:height" content="600">
 
-    <!-- Twitter -->
+    <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://lakshyabajaj14.github.io/">
-    <meta property="twitter:title" content="Portfolio | Lakshya Bajaj">
-    <meta property="twitter:description"
-        content="Personal Portfolio of Lakshya Bajaj - Robotics & Embedded Systems Engineer">
+    <meta property="twitter:title" content="Lakshya Bajaj | Robotics Engineer">
+    <meta property="twitter:description" content="I build robots end to end: the board that senses, the code that controls, and the policy that learns.">
     <meta property="twitter:image" content="https://lakshyabajaj14.github.io/assets/hero_image/preview.jpg">
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Set theme before first paint -->
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.add('js');
+            try {
+                var saved = localStorage.getItem('theme');
+                if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved);
+            } catch (e) { /* storage unavailable: keep default */ }
+        })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="noise-overlay"></div>
     <header class="header">
         <div class="container">
-            <a href="#" class="logo">Lakshya Bajaj</a>
-            <nav class="nav">
+            <a href="#home" class="logo">Lakshya Bajaj <span class="logo-rev">REV F26</span></a>
+            <nav class="nav" aria-label="Main">
                 <ul class="nav-list">
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
-                <button class="theme-toggle" aria-label="Toggle Dark Mode">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="feather feather-moon">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch between paper and blueprint theme" title="Paper / blueprint">
+                    <i class="fas fa-circle-half-stroke" aria-hidden="true"></i>
                 </button>
-                <div class="hamburger">
+                <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
 
     <main>
+        <!-- 01 HERO -->
         <section id="home" class="hero">
-            <div class="container">
+            <div class="container hero-grid">
                 <div class="hero-content">
-                    <p class="hero-greeting">Hello, I'm</p>
+                    <p class="label hero-label">Sheet 01 · Robotics Engineering · Purdue '28</p>
                     <h1 class="hero-name">Lakshya Bajaj</h1>
-                    <h2 class="hero-role">Robotics & Embedded Systems Engineer</h2>
-                    <p class="hero-description">
-                        Building Hardware-Software Systems for Robots That Sense, Learn, and Act.
+                    <p class="hero-line">
+                        I build robots end to end: the board that senses, the code that controls, and the policy that learns.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View Work</a>
-                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                        <a href="./LakshyaBajaj_Resume.pdf" class="btn btn-secondary" id="hero-resume-btn" target="_blank" download="LakshyaBajaj_Resume.pdf">
-                            <i class="fas fa-file-arrow-down"></i> Download Resume
+                        <a href="#projects" class="btn btn-primary">View work</a>
+                        <a href="./LakshyaBajaj_Resume.pdf" class="btn" id="hero-resume-btn" target="_blank" rel="noopener">
+                            <i class="fas fa-file-lines" aria-hidden="true"></i> Resume
+                        </a>
+                        <a href="mailto:lakshyabajaj14@gmail.com" class="btn">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Email
                         </a>
                     </div>
-                    <div class="hero-socials">
-                        <a href="https://github.com/lakshyabajaj14" target="_blank" aria-label="GitHub"><i
-                                class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/lakshyabajaj" target="_blank" aria-label="LinkedIn"><i
-                                class="fab fa-linkedin"></i></a>
+                    <div class="socials">
+                        <a href="https://github.com/lakshyabajaj14" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/lakshyabajaj14" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                        <a href="https://x.com/TheLakshyaBajaj" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="./assets/hero_image/IMG_2640.jpeg" alt="Lakshya Bajaj Profile Picture">
-                </div>
+
+                <figure class="figure-frame hero-arm">
+                    <svg id="arm-svg" viewBox="0 0 560 440" role="img" aria-label="Line drawing of a three-joint robot arm that follows your cursor and moves a block between two pads"></svg>
+                    <figcaption class="frame-strip">
+                        <span class="label">Fig. 1 · 3R planar arm</span>
+                        <span class="label readout" id="arm-readout" aria-hidden="true">θ1 --.-°  θ2 --.-°  θ3 --.-°</span>
+                        <span class="label frame-mode" id="arm-mode" aria-hidden="true">Pick and place</span>
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
-        <section id="about" class="about">
+        <!-- 02 ABOUT -->
+        <section id="about" class="section">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
+                <header class="section-head">
+                    <span class="section-no">02</span>
+                    <h2 class="section-title">About</h2>
+                    <span class="dim" aria-hidden="true"></span>
+                </header>
+                <div class="about-grid">
+                    <div class="about-text reveal">
                         <p>
-                            I'm a robotics engineering student at Purdue focused on the hardware and control layers that let robots sense and act in the physical world, from custom PCB-based tactile sensor arrays to embedded control systems and motor-level integration.
+                            I'm a Robotics Engineering Technology student at Purdue, concentrating in Autonomy and UXVs. I started at the hardware end, with PCBs, sensors and motor drivers, and have been working up the stack into ROS 2 and imitation learning.
                         </p>
                         <p>
-                            I like getting close to the hardware: building the sensing and signal pipelines that feed into higher-level autonomy, and increasingly, the imitation-learning and ROS2 systems that turn that sensor data into robot behavior.
+                            Right now I'm researching vision-language-action models for manipulation. What I care about most is robots that stay useful when the policy gets it wrong: noticing the failure and handing off cleanly.
                         </p>
-                        <p>
-                            My long-term goal is to work on robots that can perceive and manipulate the physical world reliably, combining tactile sensing, embedded systems, and learning-based control.
-                        </p>
+                        <dl class="title-block">
+                            <div><dt>Degree</dt><dd>B.S. RoET, May 2028</dd></div>
+                            <div><dt>GPA</dt><dd>3.84 / 4.00</dd></div>
+                            <div><dt>Minors</dt><dd>ECET, Business Economics</dd></div>
+                            <div><dt>Base</dt><dd>West Lafayette, IN</dd></div>
+                        </dl>
+                    </div>
+                    <figure class="figure-frame about-photo reveal">
+                        <img src="./assets/hero_image/IMG_2640.jpeg" alt="Lakshya Bajaj" loading="lazy">
+                        <figcaption class="frame-strip">
+                            <span class="label">Detail A</span>
+                            <span class="label">Scale 1:1</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 EXPERIENCE -->
+        <section id="experience" class="section">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-no">03</span>
+                    <h2 class="section-title">Experience</h2>
+                    <span class="dim" aria-hidden="true"></span>
+                </header>
+                <ol class="exp-list">
+                    <li class="exp-row reveal">
+                        <div class="exp-meta">
+                            <span class="label">Sep 2026 – Present</span>
+                            <span class="label exp-live">Current</span>
+                        </div>
+                        <div class="exp-body">
+                            <h3>Undergraduate Research Assistant</h3>
+                            <p class="exp-org">Prof. Xingyu Li · Purdue University</p>
+                            <ul>
+                                <li>Simulating pick-and-place manipulation with a UR5e arm in Webots for manufacturing robotics research.</li>
+                                <li>Designing a plan to fine-tune the pi0.5 vision-language-action model (OpenPi) for language-conditioned sorting and mobile fetch-and-deliver.</li>
+                                <li>Planning an imitation-learning pipeline from teleoperated demonstrations to LeRobot format, with held-out objects and lighting, texture and distractor changes to test generalization.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="exp-row reveal">
+                        <div class="exp-meta">
+                            <span class="label">Jan 2026 – May 2026</span>
+                        </div>
+                        <div class="exp-body">
+                            <h3>Undergraduate Researcher</h3>
+                            <p class="exp-org">Mechanisms and Robotic Systems (MARS) Lab · Purdue University</p>
+                            <ul>
+                                <li>Designed the schematics and a custom KiCad PCB for a 16×16 piezoresistive tactile array with multiplexed, high-speed serial readout.</li>
+                                <li>Built a multi-threaded real-time visualizer (PyQtGraph + OpenGL) that renders tactile force data as a 60 FPS surface.</li>
+                            </ul>
+                            <button type="button" class="link-btn" data-project-id="mars-tacskin">Open detail <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                        </div>
+                    </li>
+                    <li class="exp-row reveal">
+                        <div class="exp-meta">
+                            <span class="label">Jun 2025 – Aug 2025</span>
+                        </div>
+                        <div class="exp-body">
+                            <h3>Production Engineering Intern</h3>
+                            <p class="exp-org">NuTaste Food and Drink Labs · Gurugram, India</p>
+                            <ul>
+                                <li>Raised operational efficiency by 10% through a cycle time analysis and a cost-benefit analysis of packaging design.</li>
+                                <li>Found and reduced production inefficiencies using Kaizen, 5S and full Value Stream Mapping.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 04 PROJECTS -->
+        <section id="projects" class="section">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-no">04</span>
+                    <h2 class="section-title">Projects</h2>
+                    <span class="dim" aria-hidden="true"></span>
+                </header>
+                <div class="filters" id="project-filters" role="group" aria-label="Filter projects by discipline"></div>
+                <div class="projects-featured" id="projects-featured"></div>
+                <p class="label index-label" id="projects-index-label">Index · more builds</p>
+                <div class="projects-index" id="projects-index"></div>
+                <noscript><p>Project details need JavaScript. My work is also on <a href="https://github.com/lakshyabajaj14">GitHub</a>.</p></noscript>
+            </div>
+        </section>
+
+        <!-- 05 SKILLS -->
+        <section id="skills" class="section">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-no">05</span>
+                    <h2 class="section-title">Skills</h2>
+                    <span class="dim" aria-hidden="true"></span>
+                </header>
+                <div class="spec-table reveal">
+                    <div class="spec-row">
+                        <h3 class="label">Robotics, control and automation</h3>
+                        <ul class="chips">
+                            <li>FANUC KAREL</li><li>Yamaha Robot Language</li><li>ROS 2</li><li>Kinematics</li><li>Motor Control</li><li>OpenCV</li><li>MuJoCo</li><li>Webots</li><li>LeRobot</li><li>PLCs</li><li>Linux</li>
+                        </ul>
+                    </div>
+                    <div class="spec-row">
+                        <h3 class="label">Electronics and hardware</h3>
+                        <ul class="chips">
+                            <li>Circuit Design</li><li>PCB Design and Fabrication (KiCad)</li><li>Signal Conditioning</li><li>Power Systems</li>
+                        </ul>
+                    </div>
+                    <div class="spec-row">
+                        <h3 class="label">Embedded systems and sensing</h3>
+                        <ul class="chips">
+                            <li>Arduino</li><li>Raspberry Pi</li><li>ATMega 2560</li><li>Microchip Studio</li>
+                        </ul>
+                    </div>
+                    <div class="spec-row">
+                        <h3 class="label">Programming</h3>
+                        <ul class="chips">
+                            <li>Python</li><li>C</li><li>MATLAB</li>
+                        </ul>
+                    </div>
+                    <div class="spec-row">
+                        <h3 class="label">Mechanical design and prototyping</h3>
+                        <ul class="chips">
+                            <li>Siemens NX and Teamcenter</li><li>Onshape</li><li>Fusion 360</li><li>3D Printing</li><li>Laser Cutting</li>
+                        </ul>
+                    </div>
+                    <div class="spec-row">
+                        <h3 class="label">Manufacturing and process</h3>
+                        <ul class="chips">
+                            <li>Lean (Kaizen, 5S)</li><li>Value Stream Mapping</li><li>Cycle Time Analysis</li><li>Cost-Benefit Evaluation</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="skills">
+        <!-- 06 CONTACT -->
+        <section id="contact" class="section contact">
             <div class="container">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-grid-container">
-                    <!-- Embedded Hardware Systems -->
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Embedded Hardware</h3>
-                        <div class="skill-chips">
-                            <div class="skill-item">Microcontrollers</div>
-                            <div class="skill-item">Sensor Integration</div>
-                            <div class="skill-item">Circuit Design and Simulation (Multisim)</div>
-                            <div class="skill-item">PCB Design (KiCad)</div>
-                            <div class="skill-item">Signal Conditioning</div>
-                            <div class="skill-item">Power Systems</div>
-                            <div class="skill-item">Motor Control</div>
+                <header class="section-head">
+                    <span class="section-no">06</span>
+                    <h2 class="section-title">Contact</h2>
+                    <span class="dim" aria-hidden="true"></span>
+                </header>
+                <div class="contact-grid">
+                    <div class="contact-text reveal">
+                        <p class="contact-line">Got a robot that needs building, wiring or teaching? Email me.</p>
+                        <a href="mailto:lakshyabajaj14@gmail.com" class="btn btn-primary"><i class="fas fa-envelope" aria-hidden="true"></i> lakshyabajaj14@gmail.com</a>
+                        <div class="socials">
+                            <a href="https://github.com/lakshyabajaj14" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/in/lakshyabajaj14" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                            <a href="https://x.com/TheLakshyaBajaj" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
                         </div>
                     </div>
-
-                    <!-- Robotics & Control -->
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Robotics & Control</h3>
-                        <div class="skill-chips">
-                            <div class="skill-item">Control Systems</div>
-                            <div class="skill-item">Kinematics</div>
-                            <div class="skill-item">FANUC KAREL</div>
-                            <div class="skill-item">Yamaha Robot Programming</div>
-                            <div class="skill-item">PLCs</div>
-                            <div class="skill-item">ROS 2</div>
-                            <div class="skill-item">Teleoperation</div>
-                            <div class="skill-item">Imitation Learning (ACT)</div>
-                        </div>
-                    </div>
-
-                    <!-- Programming -->
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Programming</h3>
-                        <div class="skill-chips">
-                            <div class="skill-item">Python</div>
-                            <div class="skill-item">C</div>
-                            <div class="skill-item">OpenCV</div>
-                            <div class="skill-item">MATLAB</div>
-                        </div>
-                    </div>
-
-                    <!-- Mechanical & Prototyping -->
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Mechanical & Prototyping</h3>
-                        <div class="skill-chips">
-                            <div class="skill-item">Onshape</div>
-                            <div class="skill-item">Siemens NX & Teamcenter</div>
-                            <div class="skill-item">Fusion 360</div>
-                            <div class="skill-item">3D Printing</div>
-                            <div class="skill-item">Laser Cutting</div>
-                        </div>
-                    </div>
-
-                    <!-- Manufacturing & Process -->
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Manufacturing & Process</h3>
-                        <div class="skill-chips">
-                            <div class="skill-item">Lean Manufacturing (Kaizen, 5S)</div>
-                            <div class="skill-item">Value Stream Mapping</div>
-                            <div class="skill-item">Cycle Time Analysis</div>
-                            <div class="skill-item">Cost-Benefit Analysis</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects-grid">
-                    
-                    <!-- Project Card 1: SO-101 Policy Watchdog -->
-                    <article class="project-card" data-project-id="so101-watchdog" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View SO-101 Policy Watchdog project details">
-                        <div class="project-img">
-                            <img src="./assets/projects/so101%20policy%20watchdog/so101_watchdog_setup.png" alt="SO-101 Policy Watchdog" loading="lazy">
-                            <div class="project-img-overlay"></div>
-                            <span class="project-badge">Robotics & Autonomy</span>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-tags">
-                                <span class="project-tag">ROS2</span>
-                                <span class="project-tag">ACT Policy</span>
-                                <span class="project-tag">OpenCV</span>
-                                <span class="project-tag">DS4 Teleop</span>
-                            </div>
-                            <h3 class="project-title">SO-101 Policy Watchdog</h3>
-                            <p class="project-desc">A vision-based failure detection and recovery system for robot arm policies, demonstrated on a SO-101 arm. Combines an ACT imitation learning policy with real-time OpenCV failure detection and DS4 teleoperation handover.</p>
-                            <div class="project-card-footer">
-                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project Card 2: DS4 Teleop for LeRobot -->
-                    <article class="project-card" data-project-id="lerobot-ds4" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View DS4 Teleop for LeRobot project details">
-                        <div class="project-img">
-                            <img src="./assets/projects/act%2Bds4/ds4_lerobot_workspace.png" alt="DS4 Teleop for LeRobot" loading="lazy">
-                            <div class="project-img-overlay"></div>
-                            <span class="project-badge">Open Source</span>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">LeRobot</span>
-                                <span class="project-tag">DualShock 4</span>
-                                <span class="project-tag">Teleoperation</span>
-                            </div>
-                            <h3 class="project-title">DS4 Teleop for LeRobot (Open Source PR)</h3>
-                            <p class="project-desc">Contributed a new teleoperator module to the open-source LeRobot library by Hugging Face, enabling DualShock 4 controller teleoperation for robot arms as a low-cost alternative to leader arms.</p>
-                            <div class="project-card-footer">
-                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project Card 3: MEEES Lunar Base Tool-Handling -->
-                    <article class="project-card" data-project-id="meees-lunar" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View MEEES Lunar Base Tool-Handling System project details">
-                        <div class="project-img">
-                            <img src="./assets/projects/MEEES/meees_gripper_cad.png" alt="MEEES Lunar Base Tool-Handling System" loading="lazy">
-                            <div class="project-img-overlay"></div>
-                            <span class="project-badge">CAD & Mechanism</span>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-tags">
-                                <span class="project-tag">CAD (Onshape)</span>
-                                <span class="project-tag">SO-101 Arm</span>
-                                <span class="project-tag">Mechanism Design</span>
-                                <span class="project-tag">JSON Playback</span>
-                            </div>
-                            <h3 class="project-title">MEEES: Lunar Base Tool-Handling System</h3>
-                            <p class="project-desc">Modified a SO-101 robot arm with a custom bayonet twist-lock gripper and interchangeable tooling system designed for lunar base assembly and logistics.</p>
-                            <div class="project-card-footer">
-                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project Card 4: Yamaha Coin Sorter -->
-                    <article class="project-card" data-project-id="yamaha-coin-sorter" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Yamaha Pick-and-Place Coin Sorter project details">
-                        <div class="project-img">
-                            <img src="./assets/projects/yamaha%20coin%20sorter/IMG_3547.JPG" alt="Yamaha Pick-and-Place Coin Sorter" loading="lazy">
-                            <div class="project-img-overlay"></div>
-                            <span class="project-badge">Industrial Automation</span>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-tags">
-                                <span class="project-tag">Yamaha Robotics</span>
-                                <span class="project-tag">Automation</span>
-                                <span class="project-tag">Proximity Sensors</span>
-                                <span class="project-tag">Kinematics</span>
-                            </div>
-                            <h3 class="project-title">Yamaha Pick-and-Place Coin Sorter</h3>
-                            <p class="project-desc">Programmed a Yamaha industrial robot arm to sort metal coins between two fixture rows using an inductive proximity sensor for positional gating.</p>
-                            <div class="project-card-footer">
-                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project Card 5: Automated Metal Sorter (FANUC) -->
-                    <article class="project-card" data-project-id="fanuc-metal-sorter" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Automated Metal Sorter project details">
-                        <div class="project-img">
-                            <img src="./assets/projects/fanuc%20metal%20sorter/metal_sorter_robot.jpeg" alt="Automated Metal Sorter Project" loading="lazy">
-                            <div class="project-img-overlay"></div>
-                            <span class="project-badge">Industrial Robotics</span>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-tags">
-                                <span class="project-tag">FANUC KAREL</span>
-                                <span class="project-tag">Teach Pendant</span>
-                                <span class="project-tag">Sensor Integration</span>
-                            </div>
-                            <h3 class="project-title">Automated Metal Sorter</h3>
-                            <p class="project-desc">Designed and programmed an automated robotic workcell using a FANUC industrial robot to identify and classify metal and non-metal objects in real time.</p>
-                            <div class="project-card-footer">
-                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project Card 6: Hifazat Driver Safety System -->
-                    <article class="project-card" data-project-id="hifazat-safety" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Hifazat Driver Safety System project details">
-                        <div class="project-img">
-                            <img src="./assets/projects/hifazat/INTRO%20BANNER%20HIFAZAT.png" alt="Hifazat Project" loading="lazy">
-                            <div class="project-img-overlay"></div>
-                            <span class="project-badge">Computer Vision & IoT</span>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">OpenCV</span>
-                                <span class="project-tag">MediaPipe</span>
-                                <span class="project-tag">Arduino</span>
-                                <span class="project-tag">GPS/GSM</span>
-                            </div>
-                            <h3 class="project-title">Hifazat: Driver Safety System</h3>
-                            <p class="project-desc">Real-time driver distraction and fatigue monitoring system built with OpenCV and MediaPipe, paired with an Arduino GPS/GSM module for emergency SMS alerts.</p>
-                            <div class="project-card-footer">
-                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project Card 7: Interactive Fretboard Trainer -->
-                    <article class="project-card" data-project-id="fretboard-trainer" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Interactive Fretboard Trainer project details">
-                        <div class="project-img">
-                            <img src="./assets/projects/fret%20board%20trainer/fretboard_cover.png" alt="Fretboard Trainer Project" loading="lazy">
-                            <div class="project-img-overlay"></div>
-                            <span class="project-badge">Embedded & Hardware</span>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-tags">
-                                <span class="project-tag">Embedded Systems</span>
-                                <span class="project-tag">C++</span>
-                                <span class="project-tag">3D Printing</span>
-                                <span class="project-tag">CAD</span>
-                            </div>
-                            <h3 class="project-title">Interactive Fretboard Trainer</h3>
-                            <p class="project-desc">Portable stringed instrument trainer engineered with embedded electronics and dynamic LED guidance inside a custom 3D-printed enclosure.</p>
-                            <div class="project-card-footer">
-                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project Card 8: MARS Lab TacSkin -->
-                    <article class="project-card" data-project-id="mars-tacskin" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View MARS Lab TacSkin project details">
-                        <div class="project-img">
-                            <img src="./assets/projects/MARS%20Lab_TacSkin/IMG_3104.jpeg" alt="MARS Lab TacSkin Project" loading="lazy">
-                            <div class="project-img-overlay"></div>
-                            <span class="project-badge">Research & Hardware</span>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-tags">
-                                <span class="project-tag">KiCad PCB</span>
-                                <span class="project-tag">16x16 Tactile Array</span>
-                                <span class="project-tag">Signal Conditioning</span>
-                                <span class="project-tag">OpenGL / PyQtGraph</span>
-                            </div>
-                            <h3 class="project-title">Undergraduate Researcher: MARS Lab</h3>
-                            <p class="project-desc">Designed custom PCB hardware and signal conditioning for a 16x16 piezoresistive tactile sensor array (256 nodes). Developed high-speed serial streaming, real-time OpenGL visualization, and 3D force modeling for learning-based robotics pipelines.</p>
-                            <div class="project-card-footer">
-                                <span class="project-expand-btn">View Details <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="contact-text">Currently looking for new opportunities. Whether you have a question or just
-                    want to say hi, I'll try my best to get back to you!</p>
-                <div class="contact-links">
-                    <a href="mailto:lakshyabajaj14@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Say Hello</a>
-                </div>
-                <!-- Social Icons -->
-                <div class="social-links-icons">
-                    <a href="https://github.com/lakshyabajaj14" target="_blank" aria-label="GitHub"><i
-                            class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/lakshyabajaj" target="_blank" aria-label="LinkedIn"><i
-                            class="fab fa-linkedin"></i></a>
+                    <figure class="figure-frame tactile reveal">
+                        <canvas id="tactile-canvas" aria-label="A 16 by 16 grid of dots that responds to touch like a tactile sensor" role="img"></canvas>
+                        <figcaption class="frame-strip">
+                            <span class="label">Fig. 2 · 16×16 tactile array · press it</span>
+                            <span class="label readout" id="tactile-readout" aria-hidden="true">Peak 0.00 · no contact</span>
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; <span id="year"></span> Lakshya Bajaj. All rights reserved.</p>
+        <div class="container footer-block">
+            <span class="label">Drawn by L. Bajaj</span>
+            <span class="label">Rev F26</span>
+            <span class="label">Sheet 1 of 1</span>
+            <span class="label">&copy; <span id="year"></span></span>
         </div>
     </footer>
+
+    <!-- Scroll walker -->
+    <div class="walker-track" aria-hidden="true">
+        <div class="walker" id="walker"><svg id="walker-svg" viewBox="0 0 48 60"></svg></div>
+    </div>
 
     <!-- Project Detail Modal -->
     <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
         <div class="modal-container">
-            <button id="project-modal-close" class="modal-close-btn" aria-label="Close details modal">&times;</button>
-            <div id="project-modal-media" class="project-modal-header-media"></div>
+            <div class="modal-strip">
+                <span class="label" id="project-modal-label">Detail view</span>
+                <button id="project-modal-close" class="icon-btn" type="button" aria-label="Close details"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+            </div>
+            <div id="project-modal-media" class="project-modal-media"></div>
+            <div id="project-modal-gallery" class="project-modal-gallery"></div>
             <div class="project-modal-body">
                 <h2 id="project-modal-title" class="project-modal-title"></h2>
-                <div id="project-modal-tags" class="project-modal-tags"></div>
-                <div class="project-modal-section-title">Project Overview & Architecture</div>
+                <div id="project-modal-tags" class="tags"></div>
                 <div id="project-modal-desc" class="project-modal-description"></div>
-                <div id="project-modal-actions-title" class="project-modal-section-title">Resources & Demonstrations</div>
+                <div id="project-modal-actions-title" class="label project-modal-section-title">Resources</div>
                 <div id="project-modal-actions" class="project-modal-actions"></div>
             </div>
         </div>
     </div>
 
-    <!-- Universal In-Page Media Lightbox (Images, Videos, PDFs, CAD) -->
+    <!-- Media Lightbox (images, videos, PDFs, CAD) -->
     <div id="media-lightbox" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
         <div class="modal-container lightbox-container">
-            <div class="lightbox-header">
-                <div id="lightbox-title" class="lightbox-title">Media Preview</div>
-                <div class="lightbox-header-actions">
-                    <a id="lightbox-external-link" href="#" target="_blank" class="lightbox-action-icon" aria-label="Open in new tab" title="Open in new tab">
-                        <i class="fas fa-arrow-up-right-from-square"></i>
-                    </a>
-                    <button id="lightbox-close" class="lightbox-action-icon" aria-label="Close media viewer" title="Close viewer">
-                        <i class="fas fa-xmark"></i>
-                    </button>
-                </div>
+            <div class="modal-strip">
+                <span id="lightbox-title" class="label lightbox-title">Media preview</span>
+                <span class="strip-actions">
+                    <a id="lightbox-external-link" href="#" target="_blank" rel="noopener" class="icon-btn" aria-label="Open in new tab" title="Open in new tab"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    <button id="lightbox-close" class="icon-btn" type="button" aria-label="Close viewer"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+                </span>
             </div>
             <div id="lightbox-content" class="lightbox-content-area"></div>
         </div>
     </div>
 
     <script src="script.js"></script>
+    <script src="robots.js"></script>
 </body>
 
 </html>
