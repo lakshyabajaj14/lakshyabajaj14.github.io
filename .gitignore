@@ -51,3 +51,6 @@ coverage/
 # Misc
 *.pem
 .turbo/
+.DS_Store
+**/.DS_Store
+.claude/

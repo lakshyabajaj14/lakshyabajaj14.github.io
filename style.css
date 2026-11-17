@@ -482,6 +482,16 @@ h3 {
     stroke: none;
 }
 
+.r-bronze {
+    stroke: #B0702A;
+    fill: none;
+    stroke-linecap: round;
+}
+
+[data-theme="dark"] .r-bronze {
+    stroke: #E3A75C;
+}
+
 .r-text {
     font-family: var(--font-mono);
     font-size: 11px;
@@ -593,7 +603,12 @@ h3 {
     border-right: none;
 }
 
-.title-block > div:nth-last-child(-n + 2) {
+.title-block > div.wide {
+    grid-column: 1 / -1;
+    border-right: none;
+}
+
+.title-block > div:last-child {
     border-bottom: none;
 }
 
@@ -962,7 +977,7 @@ h3 {
 
 /* Footer */
 .footer {
-    padding: 1.5rem 0 calc(54px + 1.5rem);
+    padding: 1.5rem 0 calc(58px + 1.5rem);
 }
 
 .footer-block {
@@ -978,7 +993,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 54px;
+    height: 58px;
     z-index: 50;
     pointer-events: none;
     border-top: var(--line);
@@ -994,8 +1009,8 @@ h3 {
     position: absolute;
     left: 0;
     bottom: 8px;
-    width: 34px;
-    height: 43px;
+    width: 38px;
+    height: 48px;
     will-change: transform;
 }
 
@@ -1004,6 +1019,89 @@ h3 {
     width: 100%;
     height: 100%;
     overflow: visible;
+}
+
+/* Easter egg: type "percy" and the tide comes in along the ruler */
+.tide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+}
+
+.walker-track.tide-on .tide {
+    opacity: 1;
+}
+
+.tide-wave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 6px;
+    height: 14px;
+    background: var(--note);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='14' viewBox='0 0 48 14'%3E%3Cpath d='M0 7 Q12 0 24 7 T48 7' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E") 0 0 / 48px 14px repeat-x;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='14' viewBox='0 0 48 14'%3E%3Cpath d='M0 7 Q12 0 24 7 T48 7' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E") 0 0 / 48px 14px repeat-x;
+    animation: tide-roll 1.8s linear infinite;
+    animation-play-state: paused;
+}
+
+.tide-wave.back {
+    bottom: 13px;
+    opacity: 0.45;
+    animation-duration: 2.9s;
+    animation-direction: reverse;
+}
+
+.walker-track.tide-on .tide-wave {
+    animation-play-state: running;
+}
+
+.tide-label {
+    position: absolute;
+    right: 1rem;
+    top: 0.35rem;
+    color: var(--note);
+}
+
+@keyframes tide-roll {
+    to {
+        -webkit-mask-position: 48px 0;
+        mask-position: 48px 0;
+    }
+}
+
+/* Shown only in the blueprint theme */
+.dark-only {
+    display: none;
+}
+
+[data-theme="dark"] .dark-only {
+    display: inline;
+}
+
+/* Not-found page */
+.notfound {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: calc(var(--header-h) + 2rem) 0 4rem;
+}
+
+.notfound .container {
+    width: 100%;
+}
+
+.notfound h1 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    letter-spacing: -0.03em;
+    margin: 1rem 0;
+}
+
+.notfound p {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    margin-bottom: 2rem;
 }
 
 /* Modal system */
@@ -1391,8 +1489,8 @@ h3 {
     }
 
     .walker {
-        width: 28px;
-        height: 35px;
+        width: 30px;
+        height: 38px;
     }
 
     .footer {
@@ -1419,5 +1517,9 @@ h3 {
 
     .js .section-head .dim {
         transform: none;
+    }
+
+    .tide-wave {
+        animation: none;
     }
 }

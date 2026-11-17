@@ -374,8 +374,19 @@
         el('rect', { class: 'r-panel', x: 17, y: 1, width: 14, height: 9, rx: 2, 'stroke-width': 1.5 }, body);
         el('line', { class: 'r-accent', x1: 24, y1: 5.5, x2: 29, y2: 5.5, 'stroke-width': 2 }, body);
         const nearLeg = el('path', { class: 'r-ink', 'stroke-width': 2.4 }, g);
+        // Field hockey stick (held in the near hand) and ball
+        const stick = el('path', { class: 'r-ink', 'stroke-width': 1.8 }, g);
+        // Bronze sword, shown only while the tide is in (type "percy")
+        const sword = el('g', { opacity: 0 }, g);
+        el('path', { class: 'r-bronze', 'stroke-width': 2.6, d: 'M0 -4L0 -25L0.01 -28' }, sword);
+        el('path', { class: 'r-bronze', 'stroke-width': 2, d: 'M-4 -4H4' }, sword);
+        el('path', { class: 'r-ink', 'stroke-width': 2, d: 'M0 -4V2' }, sword);
+        const track = document.querySelector('.walker-track');
+        let tide = 0;
+        let clock = 0;
         const nearArm = el('path', { class: 'r-ink', 'stroke-width': 2 }, g);
         const hipDot = el('circle', { class: 'r-panel', r: 2.6, 'stroke-width': 1.2 }, g);
+        const ball = el('circle', { class: 'r-accent-fill', r: 2.3, cy: 57.6 }, svg);
 
         const legPath = (phase, activity, stance) => {
             // Foot path: on the ground for half the cycle, lifted for the other half.
@@ -418,13 +429,31 @@
 
         const draw = () => {
             const bob = -Math.abs(Math.sin(phase)) * 1.4 * activity;
-            g.setAttribute('transform', `translate(0 ${bob.toFixed(2)})`);
+            // With the tide in, the robot rises off the floor and rides the swell
+            const rise = tide * (11 + Math.sin(clock / 420) * 1.6);
+            g.setAttribute('transform', `translate(0 ${(bob - rise).toFixed(2)})`);
             body.setAttribute('transform', `rotate(${(4 * activity).toFixed(2)} 24 34)`);
             hipDot.setAttribute('cx', HIP.x); hipDot.setAttribute('cy', HIP.y);
             nearLeg.setAttribute('d', legPath(phase, activity, 3));
             farLeg.setAttribute('d', legPath(phase + Math.PI, activity, -3));
-            nearArm.setAttribute('d', armPath(phase + Math.PI, activity));
             farArm.setAttribute('d', armPath(phase, activity));
+            // Stick runs from the hand down to the floor ahead of the feet, ending in the hook.
+            // It taps side to side twice per stride and the ball rolls with it: a dribble.
+            const tap = Math.sin(phase * 2) * activity;
+            const top = { x: 29 + tap * 0.4, y: 25 };
+            const toe = { x: 40.5 + tap * 1.6, y: 57 };
+            stick.setAttribute('d', `M${top.x.toFixed(2)} ${top.y}L${toe.x.toFixed(2)} ${toe.y}q2.6 2.2 4 -2.4`);
+            const hand = { x: top.x + (toe.x - top.x) * 0.16, y: top.y + (toe.y - top.y) * 0.16 };
+            // Blend the arm from holding the stick to raising the sword overhead
+            const mix = (a, b) => a + (b - a) * tide;
+            const elbow = { x: mix(26.5, 30), y: mix(23.5, 12.5) };
+            const grip = { x: mix(hand.x, 33.5), y: mix(hand.y, 6) };
+            nearArm.setAttribute('d', `M24 16L${elbow.x.toFixed(2)} ${elbow.y.toFixed(2)}L${grip.x.toFixed(2)} ${grip.y.toFixed(2)}`);
+            sword.setAttribute('transform', `translate(${grip.x.toFixed(2)} ${grip.y.toFixed(2)}) rotate(${(12 + Math.sin(clock / 600) * 4 * tide).toFixed(2)})`);
+            sword.setAttribute('opacity', tide.toFixed(3));
+            stick.setAttribute('opacity', (1 - tide).toFixed(3));
+            ball.setAttribute('opacity', (1 - tide).toFixed(3));
+            ball.setAttribute('cx', (48.5 + tap * 2.4).toFixed(2));
             wrap.style.transform = `translateX(${x.toFixed(1)}px) scaleX(${dir})`;
         };
 
@@ -448,7 +477,16 @@
         tickers.push((dt, now) => {
             const moving = now - lastScroll < 150 && !reduceMotion.matches;
             const goal = moving ? 1 : 0;
-            if (!dirty && Math.abs(activity - goal) < 0.005 && Math.abs(targetX - x) < 0.2) return;
+            const tideGoal = track && track.classList.contains('tide-on') ? 1 : 0;
+            const tideBusy = tideGoal === 1 || tide > 0.004;
+            if (!dirty && !tideBusy && Math.abs(activity - goal) < 0.005 && Math.abs(targetX - x) < 0.2) return;
+            if (reduceMotion.matches) {
+                tide = tideGoal;            // no swell, just the pose
+            } else {
+                tide += (tideGoal - tide) * (1 - Math.exp(-dt / 260));
+                clock = now;
+            }
+            if (tideGoal === 0 && tide <= 0.004) tide = 0;
             activity += (goal - activity) * (1 - Math.exp(-dt / 120));
             x += (targetX - x) * (1 - Math.exp(-dt / 140));
             dirty = false;
@@ -588,10 +626,31 @@
     // ------------------------------------------------------------------
     // Shared animation loop
     // ------------------------------------------------------------------
+    // ------------------------------------------------------------------
+    // Easter egg: type "percy" and the tide comes in along the ruler strip
+    // ------------------------------------------------------------------
+    function initTide() {
+        const track = document.querySelector('.walker-track');
+        if (!track) return;
+        const WORD = 'percy';
+        let typed = '';
+        let timer = 0;
+        window.addEventListener('keydown', (e) => {
+            if (e.metaKey || e.ctrlKey || e.altKey || e.key.length !== 1) return;
+            typed = (typed + e.key.toLowerCase()).slice(-WORD.length);
+            if (typed !== WORD) return;
+            typed = '';
+            track.classList.add('tide-on');
+            clearTimeout(timer);
+            timer = setTimeout(() => track.classList.remove('tide-on'), 6000);
+        });
+    }
+
     const start = () => {
         initArm();
         initWalker();
         initTactile();
+        initTide();
         if (!tickers.length) return;
 
         let last = performance.now();
