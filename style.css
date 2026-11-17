@@ -977,7 +977,7 @@ h3 {
 
 /* Footer */
 .footer {
-    padding: 1.5rem 0 calc(58px + 1.5rem);
+    padding: 1.5rem 0 calc(54px + 1.5rem);
 }
 
 .footer-block {
@@ -993,7 +993,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 58px;
+    height: 54px;
     z-index: 50;
     pointer-events: none;
     border-top: var(--line);
@@ -1009,8 +1009,9 @@ h3 {
     position: absolute;
     left: 0;
     bottom: 8px;
-    width: 38px;
-    height: 48px;
+    /* Taller than the bar: the robot stands in front of it and pokes out above */
+    width: 58px;
+    height: 73px;
     will-change: transform;
 }
 
@@ -1489,8 +1490,8 @@ h3 {
     }
 
     .walker {
-        width: 30px;
-        height: 38px;
+        width: 46px;
+        height: 58px;
     }
 
     .footer {

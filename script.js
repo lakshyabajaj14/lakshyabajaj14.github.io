@@ -251,15 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Implemented the pick-and-place trajectories, sensor polling logic and coin classification routines.',
                 'The cell runs continuous sorting cycles with real-time feedback verification.'
             ],
-            actions: [
-                {
-                    label: 'Workcell & Tooling Setup (Photo)',
-                    url: './assets/projects/yamaha coin sorter/IMG_3547.JPG',
-                    icon: 'fas fa-camera',
-                    type: 'image',
-                    btnClass: 'secondary'
-                }
-            ]
+            actions: []
         },
         {
             id: 'hifazat-safety',

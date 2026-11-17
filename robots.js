@@ -366,16 +366,22 @@
 
         const g = el('g', {}, svg);
         // far side first so the near side overlaps it
-        const farArm = el('path', { class: 'r-soft', 'stroke-width': 2 }, g);
-        const farLeg = el('path', { class: 'r-soft', 'stroke-width': 2.4 }, g);
+        // Each limb gets a paper-coloured backing stroke, so the robot hides whatever it stands in front of
+        const backed = (cls, width) => {
+            const back = el('path', { class: 'r-body', 'stroke-width': width + 3.4, 'stroke-linejoin': 'round' }, g);
+            const front = el('path', { class: cls, 'stroke-width': width }, g);
+            return { setAttribute: (name, value) => { front.setAttribute(name, value); if (name === 'd') back.setAttribute(name, value); else if (name === 'opacity') back.setAttribute(name, value); } };
+        };
+        const farArm = backed('r-soft', 2);
+        const farLeg = backed('r-soft', 2.4);
         const body = el('g', {}, g);
         el('rect', { class: 'r-panel', x: 17, y: 13, width: 14, height: 21, rx: 2, 'stroke-width': 1.5 }, body);
         el('line', { class: 'r-ink', x1: 24, y1: 9, x2: 24, y2: 13, 'stroke-width': 1.5 }, body);
         el('rect', { class: 'r-panel', x: 17, y: 1, width: 14, height: 9, rx: 2, 'stroke-width': 1.5 }, body);
         el('line', { class: 'r-accent', x1: 24, y1: 5.5, x2: 29, y2: 5.5, 'stroke-width': 2 }, body);
-        const nearLeg = el('path', { class: 'r-ink', 'stroke-width': 2.4 }, g);
+        const nearLeg = backed('r-ink', 2.4);
         // Field hockey stick (held in the near hand) and ball
-        const stick = el('path', { class: 'r-ink', 'stroke-width': 1.8 }, g);
+        const stick = backed('r-ink', 1.8);
         // Bronze sword, shown only while the tide is in (type "percy")
         const sword = el('g', { opacity: 0 }, g);
         el('path', { class: 'r-bronze', 'stroke-width': 2.6, d: 'M0 -4L0 -25L0.01 -28' }, sword);
